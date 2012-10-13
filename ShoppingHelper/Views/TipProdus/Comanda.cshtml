@@ -10,7 +10,6 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-<% using (Html.BeginForm()) {  %>
 <table>
     <tr>
         <th>
@@ -30,16 +29,16 @@
                 <input type="checkbox" name="selectedObjects" value="<%=item.Id%>" />
             </td>
             
-            @*<td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Denumire)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.UnitateMasura)
-            </td>*@
+            </td>
         </tr>
     }
 </table>
         
  <input type="submit" value="Submit" />
-<%}%>
+
 
