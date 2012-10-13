@@ -79,6 +79,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Categorie.cs" />
+    <Compile Include="Models\Magazin.cs" />
+    <Compile Include="Models\MagazinProdus.cs" />
+    <Compile Include="Models\Produs.cs" />
+    <Compile Include="Models\ShopModel.cs" />
+    <Compile Include="Models\ShoppingContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
