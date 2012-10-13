@@ -18,6 +18,8 @@ namespace ShopHelper.Controllers
 
         public ViewResult Index()
         {
+           // Session["IdMagazin"] = 2;
+        
             return View(db.Produse.ToList());
         }
 
@@ -48,6 +50,7 @@ namespace ShopHelper.Controllers
             {
                 int idMagazin = GetIdMagazin();
                 produs.IdMagazin = idMagazin;
+                produs.Magazin = db.Magazine.FirstOrDefault(m => m.Id == idMagazin);
 
                 db.Produse.Add(produs);
                 db.SaveChanges();

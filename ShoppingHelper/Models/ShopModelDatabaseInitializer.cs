@@ -11,19 +11,54 @@ namespace ShoppingHelper
        protected override void Seed(ShoppingContext context)
        {
            //GetCategories().ForEach(c => context.Categorii.Add(c));
-           //GetProduse().ForEach(p => context.Produse.Add(p));
+           GetTipProduse().ForEach(p => context.TipProduse.Add(p));
 
-           //context.SaveChanges();
+           GetMagazine().ForEach(m => context.Magazine.Add(m));
+           context.SaveChanges();
        }
+
+       public static List<Magazin> GetMagazine()
+       {
+           return new List<Magazin>()
+           {
+               new Magazin
+               {
+                   Id = 1,
+                   Nume = "Carrefour",
+                   Produs = new List<Produs>
+                   {}
+               },
+               new Magazin
+               {
+                   Id = 2,
+                   Nume = "Auchan",
+                   Produs = new List<Produs>
+                   {}
+                }
+           };
+
+       }
+
         /*
        private static List<Categorie> GetCategories()
        {
            return new List<Categorie>();
        }
+        */
 
-       private static List<Produs> GetProduse()
+       public static List<TipProdus> GetTipProduse()
        {
-           return new List<Produs>();
-       }*/
+           return new List<TipProdus>
+                {
+                    new TipProdus
+                    {
+                        Id = 1,
+                        Denumire = "Ciocolata",
+                        UnitateMasura = "buc",
+                        Produs = new List<Produs>
+                        {}
+                    }
+                };
+       }
     }
 }

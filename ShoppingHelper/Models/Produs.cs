@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ShoppingHelper
 {
@@ -21,8 +22,10 @@ namespace ShoppingHelper
         [Required, Display(Name = "Pret")]
         public decimal Pret { get; set; }
 
+        [ForeignKey("IdMagazin")]
         public virtual Magazin Magazin { get; set; }
 
+        [ForeignKey("IdTipProdus")]
         public virtual TipProdus TipProdus { get; set; }
     }
 }

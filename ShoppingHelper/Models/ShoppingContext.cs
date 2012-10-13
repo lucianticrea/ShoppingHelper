@@ -13,9 +13,14 @@ namespace ShoppingHelper
         {
         }
 
-        public DbSet<Produs> Produse { get; set; }
+        public void OnContextCreated()
+        {
+             this.Configuration.LazyLoadingEnabled = false;
+        }
+
+        public DbSet<TipProdus> TipProduse { get; set; }
         public DbSet<Magazin> Magazine { get; set; }
-        public DbSet<MagazinProdus> MagazinProduse { get; set; }
+        public DbSet<Produs> Produse { get; set; }
         public DbSet<Categorie> Categorii { get; set; }
     }
 }

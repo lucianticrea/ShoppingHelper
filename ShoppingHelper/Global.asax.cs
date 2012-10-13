@@ -37,7 +37,19 @@ namespace ShoppingHelper
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
 
-            Database.SetInitializer(new ShopModelDatabaseInitializer());
+           // Database.SetInitializer(new ShopModelDatabaseInitializer());
+            
+            using (var context = new ShoppingContext())
+            {
+                context.Database.Initialize(true);
+
+                ShopModelDatabaseInitializer.GetTipProduse().ForEach(p => context.TipProduse.Add(p));
+
+                ShopModelDatabaseInitializer.GetMagazine().ForEach(m => context.Magazine.Add(m));
+                context.SaveChanges();
+
+            }
+
         }
     }
 }
