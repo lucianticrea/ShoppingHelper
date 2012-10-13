@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<ShoppingHelper.Produs>
 
 @{
-    ViewBag.Title = "ManageProducts";
+    ViewBag.Title = "Index";
 }
 
-<h2>ManageProducts</h2>
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -12,13 +12,13 @@
 <table>
     <tr>
         <th>
-            Denumire
+            Magazin
+        </th>
+        <th>
+            Tip Produs
         </th>
         <th>
             Pret
-        </th>
-        <th>
-            UnitateMasura
         </th>
         <th></th>
     </tr>
@@ -26,13 +26,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Denumire)
+            @Html.DisplayFor(modelItem => item.Magazin.Nume)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipProdus.Denumire)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Pret)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UnitateMasura)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

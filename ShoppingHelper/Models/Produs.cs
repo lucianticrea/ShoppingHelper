@@ -10,17 +10,19 @@ namespace ShoppingHelper
     {
         [Key]
         [ScaffoldColumn(false)]
-        public int Id {get; set;}
+        public int Id { get; set; }
 
-        [Required, StringLength(1000), Display(Name = "Denumire Produs")]
-        public string Denumire { get; set; }
+        [Display(Name = "Magazin")]
+        public int IdMagazin { get; set; }
 
-        [Display(Name = "Unitate de Masura")]
-        public string UnitateMasura { get; set; }
+        [Display(Name = "Tip Produs")]
+        public int IdTipProdus { get; set; }
 
-        public virtual ICollection<MagazinProdus> MagazinProdus { get; set; }
+        [Required, Display(Name = "Pret")]
+        public decimal Pret { get; set; }
 
+        public virtual Magazin Magazin { get; set; }
 
-
+        public virtual TipProdus TipProdus { get; set; }
     }
 }

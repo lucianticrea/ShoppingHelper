@@ -8,14 +8,14 @@ namespace ShoppingHelper
 {
     public class ShopModelDatabaseInitializer : DropCreateDatabaseIfModelChanges<ShoppingContext>
     {
-       /*protected override void Seed(ShoppingContext context)
+       protected override void Seed(ShoppingContext context)
        {
-           GetCategories().ForEach(c => context.Categorii.Add(c));
-           GetProduse().ForEach(p => context.Produse.Add(p));
+           //GetCategories().ForEach(c => context.Categorii.Add(c));
+           //GetProduse().ForEach(p => context.Produse.Add(p));
 
-           context.SaveChanges();
+           //context.SaveChanges();
        }
-
+        /*
        private static List<Categorie> GetCategories()
        {
            return new List<Categorie>();

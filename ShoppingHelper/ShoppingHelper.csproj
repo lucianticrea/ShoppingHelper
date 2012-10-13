@@ -69,7 +69,8 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\SellerController.cs" />
+    <Compile Include="Controllers\ProdusController.cs" />
+    <Compile Include="Controllers\TipProdusController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -77,8 +78,8 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Categorie.cs" />
     <Compile Include="Models\Magazin.cs" />
-    <Compile Include="Models\MagazinProdus.cs" />
     <Compile Include="Models\Produs.cs" />
+    <Compile Include="Models\TipProdus.cs" />
     <Compile Include="Models\ShopModelDatabaseInitializer.cs" />
     <Compile Include="Models\ShoppingContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -200,22 +201,34 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Seller\ManageProducts.cshtml" />
+    <Content Include="Views\TipProdus\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Seller\Index.cshtml" />
+    <Content Include="Views\TipProdus\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Seller\Details.cshtml" />
+    <Content Include="Views\TipProdus\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Seller\Create.cshtml" />
+    <Content Include="Views\TipProdus\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Seller\Edit.cshtml" />
+    <Content Include="Views\TipProdus\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Seller\Delete.cshtml" />
+    <Content Include="Views\Produs\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Produs\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Produs\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Produs\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Produs\Delete.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

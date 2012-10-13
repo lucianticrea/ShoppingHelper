@@ -1,0 +1,30 @@
+﻿@model ShoppingHelper.Produs
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Produs</legend>
+
+    <div class="display-label">Magazin</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Magazin.Nume)
+    </div>
+
+    <div class="display-label">Tip Produs</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipProdus.Denumire)
+    </div>
+
+    <div class="display-label">Pret</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pret)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

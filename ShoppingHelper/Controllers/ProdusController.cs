@@ -9,12 +9,12 @@ using ShoppingHelper;
 
 namespace ShopHelper.Controllers
 { 
-    public class SellerController : Controller
+    public class ProdusController : Controller
     {
         private ShoppingContext db = new ShoppingContext();
 
         //
-        // GET: /Seller/
+        // GET: /Produs/
 
         public ViewResult Index()
         {
@@ -22,7 +22,7 @@ namespace ShopHelper.Controllers
         }
 
         //
-        // GET: /Seller/Details/5
+        // GET: /Produs/Details/5
 
         public ViewResult Details(int id)
         {
@@ -31,7 +31,7 @@ namespace ShopHelper.Controllers
         }
 
         //
-        // GET: /Seller/Create
+        // GET: /Produs/Create
 
         public ActionResult Create()
         {
@@ -39,13 +39,16 @@ namespace ShopHelper.Controllers
         } 
 
         //
-        // POST: /Seller/Create
+        // POST: /Produs/Create
 
         [HttpPost]
         public ActionResult Create(Produs produs)
         {
             if (ModelState.IsValid)
             {
+                int idMagazin = GetIdMagazin();
+                produs.IdMagazin = idMagazin;
+
                 db.Produse.Add(produs);
                 db.SaveChanges();
                 return RedirectToAction("Index");  
@@ -53,9 +56,25 @@ namespace ShopHelper.Controllers
 
             return View(produs);
         }
+
+        private int GetIdMagazin()
+        {
+            object objIdMagazin = Session["IdMagazin"];
+            if (objIdMagazin == null)
+            {
+                throw new Exception("Nu s-a gasit nici un id pentru magazin");
+            }
+
+            int idMagazin = -1;
+            if (!int.TryParse(objIdMagazin.ToString(), out idMagazin))
+            {
+                throw new Exception("Nu s-a gasit un id valid pentru magazin ");
+            }
+            return idMagazin;
+        }
         
         //
-        // GET: /Seller/Edit/5
+        // GET: /Produs/Edit/5
  
         public ActionResult Edit(int id)
         {
@@ -64,7 +83,7 @@ namespace ShopHelper.Controllers
         }
 
         //
-        // POST: /Seller/Edit/5
+        // POST: /Produs/Edit/5
 
         [HttpPost]
         public ActionResult Edit(Produs produs)
@@ -79,7 +98,7 @@ namespace ShopHelper.Controllers
         }
 
         //
-        // GET: /Seller/Delete/5
+        // GET: /Produs/Delete/5
  
         public ActionResult Delete(int id)
         {
@@ -88,7 +107,7 @@ namespace ShopHelper.Controllers
         }
 
         //
-        // POST: /Seller/Delete/5
+        // POST: /Produs/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
