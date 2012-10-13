@@ -18,7 +18,12 @@ namespace ShopHelper.Controllers
 
         public ViewResult Index()
         {
-            return View(db.Produse.ToList());
+            return View(db.TipProduse.ToList());
+        }
+
+        public ViewResult Comanda()
+        {
+            return View(db.TipProduse.ToList());
         }
 
         //
