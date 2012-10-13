@@ -78,7 +78,7 @@
     <Compile Include="Models\Magazin.cs" />
     <Compile Include="Models\MagazinProdus.cs" />
     <Compile Include="Models\Produs.cs" />
-    <Compile Include="Models\ShopModel.cs" />
+    <Compile Include="Models\ShopModelDatabaseInitializer.cs" />
     <Compile Include="Models\ShoppingContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -161,7 +161,9 @@
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
