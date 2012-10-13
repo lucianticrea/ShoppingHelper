@@ -1,9 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingHelper", "ShoppingHelper\ShoppingHelper.csproj", "{D8E4E569-897E-4AF0-88E3-04C72EE00CD3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingHelper.DAL", "ShoppingHelper.DAL\ShoppingHelper.DAL.csproj", "{995C0382-F37B-4010-9B3C-D35D06EE61FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +13,6 @@ Global
 		{D8E4E569-897E-4AF0-88E3-04C72EE00CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8E4E569-897E-4AF0-88E3-04C72EE00CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8E4E569-897E-4AF0-88E3-04C72EE00CD3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{995C0382-F37B-4010-9B3C-D35D06EE61FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{995C0382-F37B-4010-9B3C-D35D06EE61FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{995C0382-F37B-4010-9B3C-D35D06EE61FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{995C0382-F37B-4010-9B3C-D35D06EE61FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
