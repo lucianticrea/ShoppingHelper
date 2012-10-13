@@ -8,8 +8,8 @@
     <ProjectGuid>{995C0382-F37B-4010-9B3C-D35D06EE61FA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ShopHelper.DAL</RootNamespace>
-    <AssemblyName>ShopHelper.DAL</AssemblyName>
+    <RootNamespace>ShoppingHelper.DAL</RootNamespace>
+    <AssemblyName>ShoppingHelper.DAL</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

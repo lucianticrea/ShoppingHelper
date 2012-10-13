@@ -182,7 +182,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ShopHelper.DAL\ShoppingHelper.DAL.csproj">
+    <ProjectReference Include="..\ShoppingHelper.DAL\ShoppingHelper.DAL.csproj">
       <Project>{995C0382-F37B-4010-9B3C-D35D06EE61FA}</Project>
       <Name>ShoppingHelper.DAL</Name>
     </ProjectReference>

@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingHelper", "ShopHelper\ShoppingHelper.csproj", "{D8E4E569-897E-4AF0-88E3-04C72EE00CD3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingHelper", "ShoppingHelper\ShoppingHelper.csproj", "{D8E4E569-897E-4AF0-88E3-04C72EE00CD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingHelper.DAL", "ShopHelper.DAL\ShoppingHelper.DAL.csproj", "{995C0382-F37B-4010-9B3C-D35D06EE61FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingHelper.DAL", "ShoppingHelper.DAL\ShoppingHelper.DAL.csproj", "{995C0382-F37B-4010-9B3C-D35D06EE61FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
