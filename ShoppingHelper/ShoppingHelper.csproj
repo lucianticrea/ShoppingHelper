@@ -90,6 +90,18 @@
       <DependentUpon>ShoppingHelper.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\themes\base\images\bg.png" />
+    <Content Include="Content\themes\base\images\bg_camera.png" />
+    <Content Include="Content\themes\base\images\bg_fav.png" />
+    <Content Include="Content\themes\base\images\bg_home.png" />
+    <Content Include="Content\themes\base\images\bg_shop.png" />
+    <Content Include="Content\themes\base\images\bg_user.png" />
+    <Content Include="Content\themes\base\images\camera.png" />
+    <Content Include="Content\themes\base\images\fav.png" />
+    <Content Include="Content\themes\base\images\home.png" />
+    <Content Include="Content\themes\base\images\shop.png" />
+    <Content Include="Content\themes\base\images\title.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -103,6 +115,7 @@
     <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\user.png" />
     <Content Include="Content\themes\base\jquery-ui.css" />
     <Content Include="Content\themes\base\jquery.ui.accordion.css" />
     <Content Include="Content\themes\base\jquery.ui.all.css" />
@@ -154,14 +167,17 @@
     <Content Include="README.jQuery.vsdoc.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\csscustom.js" />
     <Content Include="Scripts\jquery-1.8.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <Content Include="Scripts\jquery-ui-1.9.0.js" />
     <Content Include="Scripts\jquery-ui-1.9.0.min.js" />
+    <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery_002.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -195,6 +211,7 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\NewFolder1\" />
     <Folder Include="Views\Buyer\" />
   </ItemGroup>
   <ItemGroup>

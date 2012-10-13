@@ -3,34 +3,132 @@
 <head>
     <meta charset="utf-8" />
     <title>@ViewBag.Title</title>
-    <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
-    <script src="@Url.Content("~/Scripts/jquery-1.8.2.min.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/modernizr-2.6.2.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/bootstrap.js")" type="text/javascript"></script>
+
+    <script type="text/javascript" src="../../Scripts/jquery_002.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery.js"></script>
+    <link href="@Url.Content("~/Content/style.css")" rel="stylesheet" type="text/css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial;
+            background: #fff url(../../Content/themes/base/images/bg.png) no-repeat top left;
+        }
+
+        .title {
+            width: 548px;
+            height: 119px;
+            position: absolute;
+            top: 450px;
+            left: 170px;
+            background: transparent url(../../Content/themes/base/images/title.png) no-repeat top left;
+        }
+
+        #content {
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="container-fluid">
+    <div>
         <header>
-            <div class="row-fluid">
-                <div class="span2">
-                    Sidebar content
-                </div>
-                <div id="logindisplay">
-                    @Html.Partial("_LogOnPartial")
-                </div>
-                <nav>
-                    <ul id="menu">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                    </ul>
-                </nav>
+            <div id="content">
+                <div class="title"></div>
 
-                <div class="span10">
-                    Body content
+                <div class="navigation" id="nav">
+
+                    <div class="item user">
+                        <img src="../../Content/themes/base/images/bg_user.png" alt="" width="199" height="199" class="circle" />
+
+                        <a href="#" class="icon"></a>
+                        <h2>User</h2>
+                        <ul>
+                            <li><a href="#">LogIn</a></li>
+                        </ul>
+                    </div>
+                    <div class="item home">
+                        <img src="../../Content/themes/base/images/bg_home.png" alt="" width="199" height="199" class="circle" />
+                        <a href="#" class="icon"></a>
+                        <h2>Home</h2>
+                        <ul>
+                            <li><a href="#">Portfolio</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="item shop">
+                        <img src="../../Content/themes/base/images/bg_shop.png" alt="" width="199" height="199" class="circle" />
+                        <a href="#" class="icon"></a>
+                        <h2>Shop</h2>
+                        <ul>
+                            <li><a href="#">Catalogue</a></li>
+                            <li><a href="#">Orders</a></li>
+                            <li><a href="#">Offers</a></li>
+                        </ul>
+                    </div>
+                    <div class="item camera">
+                        <img src="../../Content/themes/base/images/bg_camera.png" alt="" width="199" height="199" class="circle" />
+                        <a href="#" class="icon"></a>
+                        <h2>Photos</h2>
+                        <ul>
+                            <li><a href="#">Gallery</a></li>
+                            <li><a href="#">Prints</a></li>
+                            <li><a href="#">Submit</a></li>
+                        </ul>
+                    </div>
+                    <div class="item fav">
+                        <img src="../../Content/themes/base/images/bg_fav.png" alt="" width="199" height="199" class="circle" />
+                        <a href="#" class="icon"></a>
+                        <h2>Love</h2>
+                        <ul>
+                            <li><a href="#">Social</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Comments</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+            <!-- The JavaScript -->
+            <script type="text/javascript">
+                $(function () {
+                    $('#nav> div').hover(
+                    function () {
+                        var $this = $(this);
+                        $this.find('img').stop().animate({
+                            'width': '199px',
+                            'height': '199px',
+                            'top': '-25px',
+                            'left': '-25px',
+                            'opacity': '1.0'
+                        }, 500, 'easeOutBack', function () {
+                            $(this).parent().find('ul').fadeIn(700);
+                        });
+
+                        $this.find('a:first,h2').addClass('active');
+                    },
+                    function () {
+                        var $this = $(this);
+                        $this.find('ul').fadeOut(500);
+                        $this.find('img').stop().animate({
+                            'width': '52px',
+                            'height': '52px',
+                            'top': '0px',
+                            'left': '0px',
+                            'opacity': '0.1'
+                        }, 5000, 'easeOutBack');
+
+                        $this.find('a:first,h2').removeClass('active');
+                    }
+                );
+                });
+            </script>
         </header>
+
         <section id="main">
             @RenderBody()
         </section>
