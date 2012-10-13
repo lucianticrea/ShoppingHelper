@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Data.Entity;
 
-namespace ShoppingHelper.DAL
+namespace ShoppingHelper
 {
-    class ShopModel : DbContext
+    public class ShopModelDatabaseInitializer : DropCreateDatabaseIfModelChanges<ShoppingContext>
     {
        protected void Seed(ShoppingContext context)
        {

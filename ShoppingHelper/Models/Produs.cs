@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
 
-namespace ShoppingHelper.DAL
+namespace ShoppingHelper
 {
     public class Produs
     {
@@ -12,6 +12,7 @@ namespace ShoppingHelper.DAL
         [ScaffoldColumn(false)]
         public int Id {get; set;}
 
+        [Required, StringLength(1000), Display()]
         public string Denumire { get; set; }
 
         public decimal Pret { get; set; }

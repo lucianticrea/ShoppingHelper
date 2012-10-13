@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
 
-namespace ShoppingHelper.DAL
+namespace ShoppingHelper
 {
     public class Categorie
     {

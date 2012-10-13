@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Data.Entity;
 
-namespace ShoppingHelper.DAL
+namespace ShoppingHelper
 {
     public class ShoppingContext : DbContext
     {
 
-        public ShoppingContext()
-            : base("ShoppingHelper")
+        public ShoppingContext() : base("ShoppingHelper")
         {
         }
 
