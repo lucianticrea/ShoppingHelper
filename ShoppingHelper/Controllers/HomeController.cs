@@ -19,5 +19,16 @@ namespace ShopHelper.Controllers
         {
             return View();
         }
+
+        public void GmailTeste(string To, string Subject, string Body)
+        {
+            var message = new System.Net.Mail.MailMessage();
+            message.To.Add(To);
+            message.Subject = Subject;
+            message.Body = Body;
+
+            var smtpClient = new System.Net.Mail.SmtpClient();
+            smtpClient.Send(message);
+        }
     }
 }
