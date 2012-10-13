@@ -12,11 +12,10 @@ namespace ShoppingHelper
         [ScaffoldColumn(false)]
         public int Id {get; set;}
 
-        [Required, StringLength(1000), Display()]
+        [Required, StringLength(1000), Display(Name = "Denumire Produs")]
         public string Denumire { get; set; }
 
-        public decimal Pret { get; set; }
-
+        [Display(Name = "Unitate de Masura")]
         public string UnitateMasura { get; set; }
 
         public virtual ICollection<MagazinProdus> MagazinProdus { get; set; }

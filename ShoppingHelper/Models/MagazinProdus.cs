@@ -16,6 +16,9 @@ namespace ShoppingHelper
 
         public int IdProdus { get; set; }
 
+        [Required, Display(Name = "Pret")]
+        public decimal Pret { get; set; }
+
         public virtual Magazin Magazin { get; set; }
 
         public virtual Produs Produs { get; set; }

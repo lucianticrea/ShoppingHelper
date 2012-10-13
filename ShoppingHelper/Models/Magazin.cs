@@ -13,9 +13,9 @@ namespace ShoppingHelper
         [ScaffoldColumn(false)]
         public int Id { get; set; }
 
+        [Required, StringLength(1000), Display(Name = "Denumire Magazin")]
         public string Nume { get; set; }
 
         public virtual ICollection<MagazinProdus> MagazinProdus { get; set; }
-
     }
 }

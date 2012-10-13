@@ -12,6 +12,7 @@ namespace ShoppingHelper
         [ScaffoldColumn(false)]
         public int Id { get; set; }
 
+        [Required, StringLength(1000), Display(Name = "Categorie")]
         public string Nume { get; set; }
     }
 }
