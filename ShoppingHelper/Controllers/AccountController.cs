@@ -9,14 +9,17 @@ using ShoppingHelper.Models;
 
 namespace ShoppingHelper.Controllers
 {
-    public class AccountController : Controller
-    {
+    public class AccountController : DataAvail.Mvc.Account.OAuthAccountController
+	{
+		
 
         //
         // GET: /Account/LogOn
 
         public ActionResult LogOn()
-        {
+		{
+			base.OAuthBeforeLogOn();
+
             return View();
         }
 
@@ -191,3 +194,4 @@ namespace ShoppingHelper.Controllers
         #endregion
     }
 }
+
