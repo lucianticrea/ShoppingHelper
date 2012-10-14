@@ -3,12 +3,8 @@
 @{
     ViewBag.Title = "Comanda";
 }
-
 <h2>Comanda</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 
 <table>
     <tr>
@@ -26,7 +22,8 @@
     @foreach (var item in Model) { 
         <tr>
             <td>
-                <input type="checkbox" name="selectedObjects" value="<%=item.Id%>" />
+                <input type="checkbox" name="selectedObjects" onclick= "selectedObjectsClick(this,'@Html.DisplayFor(model => item.Id)')" 
+                 value="<%: item.Id%>" />
             </td>
             
             <td>
@@ -38,7 +35,41 @@
         </tr>
     }
 </table>
-        
- <input type="submit" value="Submit" />
+    <p>
+        <input type="button" value="Trimite" onclick = "submitClick()" />
+    </p>
+    
+    <script>
+
+        var ids = new Array();
+
+        function selectedObjectsClick(obj,itemId) {
+            if (obj.checked) {
+                ids.push(itemId);
+            }
+            else {
+                ids.pop(itemId);
+            }
+        }
+
+        function submitClick() {
+            var postData = $.toJSON(ids);
+            var url = '@Url.Action("Comanda", "TipProdus")';
+            alert(ids);
+            $.ajax(
+            {
+                type: "POST",
+                url: url,
+                dataType: "json",
+                data: { orderedIds: postData },
+                success: function (result) {
+                    alert("succes");
+                },
+                error: function (req, status, error) {
+                    alert(error);
+                }
+            });
+        }
+    </script>
 
 

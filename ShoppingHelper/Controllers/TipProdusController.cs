@@ -27,6 +27,21 @@ namespace ShopHelper.Controllers
         }
 
         //
+        // POST: /TipProdus/Comanda/5
+
+        [HttpPost]
+        public ActionResult Comanda(IEnumerable<string> orderedIds)
+        {
+            orderedIds = ((string[])(orderedIds))[0].Replace("[", "").Replace("]", "").Replace("\\", "").Replace("\"", "").Split(',');
+            List<int> ids = orderedIds.Select(id => Convert.ToInt32(id)).ToList();
+            var tipProduse = db.TipProduse
+                                    .Where(tp => ids.Contains(tp.Id));
+
+            Session["ListaComenzi"] = tipProduse;
+
+            return RedirectToAction("Index");
+        }
+        //
         // GET: /TipProdus/Details/5
 
         public ViewResult Details(int id)
