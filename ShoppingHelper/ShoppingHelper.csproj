@@ -87,6 +87,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ShoppingHelper.mdf" />
+    <Content Include="App_Data\ShoppingHelper_log.ldf">
+      <DependentUpon>ShoppingHelper.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\themes\base\images\bg.png" />
@@ -209,7 +213,6 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Content\NewFolder1\" />
     <Folder Include="Views\Buyer\" />
   </ItemGroup>

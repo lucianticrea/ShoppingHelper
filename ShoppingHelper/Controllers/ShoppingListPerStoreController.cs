@@ -27,7 +27,7 @@ namespace ShopHelper.Controllers
             tipProdusList=(List<TipProdus>)Session["ShoppingList"];
           //  tipProdusList = db.TipProduse.ToList();
             produseList = db.Produse.ToList();
-            tipProdusList = db.TipProduse.Where(p => p.Id == 1).ToList();
+           //s tipProdusList = db.TipProduse.Where(p => p.Id == 1).ToList();
             magazine = db.Magazine.ToList();
             
             var listeMagazine = tipProdusList.Select(tp => tp.Produs.Select(p => p.Magazin)).ToList();
