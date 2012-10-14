@@ -8,7 +8,8 @@ using System.Web.Mvc;
 using ShoppingHelper;
 
 namespace ShoppingHelper.Controllers
-{ 
+{
+    [Authorize]
     public class TipProdusController : Controller
     {
         private ShoppingContext db = new ShoppingContext();

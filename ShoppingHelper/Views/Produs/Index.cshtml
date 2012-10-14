@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<ShoppingHelper.Produs>
-
 @{
     ViewBag.Title = "Index";
 }
@@ -9,37 +8,34 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table>
+<table class="pagination-centered table">
     <tr>
-        <th>
-            Magazin
+        <th>Magazin
         </th>
-        <th>
-            Tip Produs
+        <th>Tip Produs
         </th>
-        <th>
-            Pret
+        <th>Pret
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Magazin.Nume)
-        </td> 
-        <td>
-            @Html.DisplayFor(modelItem => item.TipProdus.Denumire)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pret)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Magazin.Nume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipProdus.Denumire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pret)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 </table>

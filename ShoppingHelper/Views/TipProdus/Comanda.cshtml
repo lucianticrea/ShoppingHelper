@@ -1,31 +1,27 @@
 ﻿@model IEnumerable<ShoppingHelper.TipProdus>
-
 @{
     ViewBag.Title = "Comanda";
 }
 <h2>Comanda</h2>
 
-
-<table>
+<table class="pagination-centered table">
     <tr>
-        <th>
+        <th></th>
+        <th>Denumire
         </th>
-        <th>
-            Denumire
-        </th>
-        <th>
-            UnitateMasura
+        <th>UnitateMasura
         </th>
         <th></th>
     </tr>
 
-    @foreach (var item in Model) { 
+    @foreach (var item in Model)
+    {
         <tr>
             <td>
-                <input type="checkbox" name="selectedObjects" onclick= "selectedObjectsClick(this,'@Html.DisplayFor(model => item.Id)')" 
+                <input type="checkbox" name="selectedObjects" onclick= "selectedObjectsClick(this,'@Html.DisplayFor(model => item.Id)    ')"
                  value="<%: item.Id%>" />
             </td>
-            
+
             <td>
                 @Html.DisplayFor(modelItem => item.Denumire)
             </td>
@@ -35,47 +31,44 @@
         </tr>
     }
 </table>
-    <p>
-        <a href='#' onclick = "submitClick()">Trimite </a>
-        @Html.ActionLink("Fa listele", "Index", "ShoppingListPerStore") |
-            
-    </p>
-    
-    <script>
+<p>
+    <a class="btn btn-primary" href='#' onclick="submitClick()">Trimite </a>
+    @Html.ActionLink("Fa listele", "Index", "ShoppingListPerStore") |
+</p>
 
-        var ids = new Array();
+<script>
 
-        function selectedObjectsClick(obj,itemId) {
-            if (obj.checked) {
-                ids.push(itemId);
-            }
-            else {
-                ids.pop(itemId);
-            }
+    var ids = new Array();
+
+    function selectedObjectsClick(obj,itemId) {
+        if (obj.checked) {
+            ids.push(itemId);
         }
+        else {
+            ids.pop(itemId);
+        }
+    }
 
-        function submitClick() {
-            var postData = $.toJSON(ids);
-            var url = '@Url.Action("Comanda", "TipProdus")';
-            $.post
-            $.ajax(
-            {
-                type: "POST",
-                async: false,
-                url: url,
-                dataType: "html",
-                data: { orderedIds: postData },
-                success: function (result) {
-                    if (result.redirect) {
-                        window.location.href = result.redirect;
-                        return;
-                    }
-                },
-                error: function (req, status, error) {
-                    alert(error);
+    function submitClick() {
+        var postData = $.toJSON(ids);
+        var url = '@Url.Action("Comanda", "TipProdus")';
+        $.post
+        $.ajax(
+        {
+            type: "POST",
+            async: false,
+            url: url,
+            dataType: "html",
+            data: { orderedIds: postData },
+            success: function (result) {
+                if (result.redirect) {
+                    window.location.href = result.redirect;
+                    return;
                 }
-            });
-        }
-    </script>
-
-
+            },
+            error: function (req, status, error) {
+                alert(error);
+            }
+        });
+    }
+</script>

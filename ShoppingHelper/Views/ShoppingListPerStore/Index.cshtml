@@ -1,44 +1,40 @@
 ﻿@model IEnumerable<ShoppingHelper.ShoppingListPerStore>
-
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Rezultate</h2>
 
-<table>
+<table class="pagination-centered table">
     <tr>
-        <th>
-            PretTotal
+        <th>PretTotal
         </th>
-        <th>
-            Magazin
+        <th>Magazin
         </th>
-        <th>
-            Lista Produse
+        <th>Lista Produse
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.PretTotal)
-        </td>
-        <td>
-            @foreach (var magazin in item.Produse)
-            {
-               if(magazin.IdMagazin==item.MagazinId)
-               {
-                    @Html.DisplayFor(modelItem=>magazin.Magazin.Nume)
-                   break;
-            }
-                
-            }
-            @Html.ListBoxFor(modelitem => item.TipProdus,new MultiSelectList(item.TipProdus, "Id", "Denumire"), new {Multiple="multiple"})
-        </td>
-    
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PretTotal)
+            </td>
+            <td>
+                @foreach (var magazin in item.Produse)
+                {
+                    if (magazin.IdMagazin == item.MagazinId)
+                    {
+                    @Html.DisplayFor(modelItem => magazin.Magazin.Nume)
+                        break;
+                    }
 
+                }
+
+                @Html.ListBoxFor(modelitem => item.TipProdus, new MultiSelectList(item.TipProdus, "Id", "Denumire"), new { Multiple = "multiple" })
+            </td>
+        </tr>
+    }
 </table>

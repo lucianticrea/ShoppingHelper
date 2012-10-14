@@ -1,33 +1,42 @@
 ﻿@model ShoppingHelper.Produs
-
 @{
     ViewBag.Title = "Delete";
 }
 
 <h2>Delete</h2>
+<div class="text-info">
+    <h3>Are you sure you want to delete this?</h3>
+</div>
+<br />
+@Html.ActionLink("Back to List", "Index")
+<table class="pagination-centered table">
 
-<h3>Are you sure you want to delete this?</h3>
-<fieldset>
-    <legend>Produs</legend>
+    <tr>
+        <th>Magazin
+        </th>
+        <th>Tip Produs
+        </th>
+        <th>Pret
+        </th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.Magazin.Nume)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.TipProdus.Denumire)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Pret)
+        </td>
+    </tr>
+</table>
 
-    <div class="display-label">Magazin</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Magazin.Nume)
-    </div>
-
-    <div class="display-label">Tip Produs</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.TipProdus.Denumire)
-    </div>
-
-    <div class="display-label">Pret</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Pret)
-    </div>
-</fieldset>
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
+        <input class="btn btn-primary" type="submit" value="Delete" />
+        <br />
     </p>
 }

@@ -1,25 +1,30 @@
 ﻿@model ShoppingHelper.TipProdus
-
 @{
     ViewBag.Title = "Details";
 }
 
 <h2>Details</h2>
 
-<fieldset>
-    <legend>TipProdus</legend>
+<table class="pagination-centered table">
 
-    <div class="display-label">Denumire</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Denumire)
-    </div>
+    <tr>
+        <th>Tip Produs
+        </th>
+        <th>Unitate Masura
+        </th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.Denumire)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.UnitateMasura)
+        </td>
+    </tr>
+</table>
 
-    <div class="display-label">UnitateMasura</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.UnitateMasura)
-    </div>
-</fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

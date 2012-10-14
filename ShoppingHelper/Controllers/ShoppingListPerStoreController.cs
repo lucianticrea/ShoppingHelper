@@ -10,7 +10,8 @@ using ShoppingHelper;
 using System.Data.Entity.Infrastructure;
 
 namespace ShoppingHelper.Controllers
-{ 
+{
+    [Authorize]
     public class ShoppingListPerStoreController : Controller
     {
         private ShoppingContext db = new ShoppingContext();
