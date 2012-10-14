@@ -36,7 +36,9 @@
     }
 </table>
     <p>
-        <input type="button" value="Trimite" onclick = "submitClick()" />
+        <a href='#' onclick = "submitClick()">Trimite </a>
+        @Html.ActionLink("Fa listele", "Index", "ShoppingListPerStore") |
+            
     </p>
     
     <script>
@@ -55,15 +57,19 @@
         function submitClick() {
             var postData = $.toJSON(ids);
             var url = '@Url.Action("Comanda", "TipProdus")';
-            alert(ids);
+            $.post
             $.ajax(
             {
                 type: "POST",
+                async: false,
                 url: url,
-                dataType: "json",
+                dataType: "html",
                 data: { orderedIds: postData },
                 success: function (result) {
-                    alert("succes");
+                    if (result.redirect) {
+                        window.location.href = result.redirect;
+                        return;
+                    }
                 },
                 error: function (req, status, error) {
                     alert(error);

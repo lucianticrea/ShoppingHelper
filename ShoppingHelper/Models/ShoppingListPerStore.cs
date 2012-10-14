@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace ShopHelper
+namespace ShoppingHelper
 {
 
     public class ShoppingListPerStore

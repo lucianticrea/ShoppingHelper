@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using ShoppingHelper;
 
-namespace ShopHelper.Controllers
+namespace ShoppingHelper.Controllers
 { 
     public class TipProdusController : Controller
     {
@@ -30,17 +30,27 @@ namespace ShopHelper.Controllers
         // POST: /TipProdus/Comanda/5
 
         [HttpPost]
-        public ActionResult Comanda(IEnumerable<string> orderedIds)
+        public ActionResult Comanda(string[] orderedIds)
         {
             orderedIds = ((string[])(orderedIds))[0].Replace("[", "").Replace("]", "").Replace("\\", "").Replace("\"", "").Split(',');
-            List<int> ids = orderedIds.Select(id => Convert.ToInt32(id)).ToList();
+            List<int> ids = orderedIds
+                                .Where(id => id != "")
+                                .Select(id => Convert.ToInt32(id)).ToList();
             var tipProduse = db.TipProduse
                                     .Where(tp => ids.Contains(tp.Id));
 
-            Session["ListaComenzi"] = tipProduse;
+            Session["ShoppingList"] = tipProduse.ToList();
 
             return RedirectToAction("Index");
+       
+       //     return RedirectToAction("Index", "ShoppingListPerStore");
         }
+
+        public ViewResult RedirectToShoppingList()
+        {
+            return View();
+        }
+
         //
         // GET: /TipProdus/Details/5
 

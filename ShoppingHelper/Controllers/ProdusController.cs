@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using ShoppingHelper;
 
-namespace ShopHelper.Controllers
+namespace ShoppingHelper.Controllers
 { 
     public class ProdusController : Controller
     {

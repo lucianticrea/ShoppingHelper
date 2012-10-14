@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
-using ShopHelper.Models;
+using ShoppingHelper.Models;
 
-namespace ShopHelper.Controllers
+namespace ShoppingHelper.Controllers
 {
     public class AccountController : Controller
     {

@@ -1,4 +1,4 @@
-namespace ShopHelper.Migrations
+namespace ShoppingHelper.Migrations
 {
     using System;
     using System.Data.Entity;

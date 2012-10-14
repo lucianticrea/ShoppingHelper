@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ShopHelper.ShoppingListPerStore>
+﻿@model IEnumerable<ShoppingHelper.ShoppingListPerStore>
 
 @{
     ViewBag.Title = "Index";
@@ -6,9 +6,6 @@
 
 <h2>Index</h2>
 
-<p>
-    @*@Html.ActionLink("Create New", "Create")*@
-</p>
 <table>
     <tr>
         <th>
@@ -38,17 +35,9 @@
             }
                 
             }
-           @*@Html.DisplayFor(modelItem => item.MagazinId)*@
-                       @*@Html.DisplayFor(modelItem => item.MagazinId)*@
-           
             @Html.ListBoxFor(modelitem => item.TipProdus,new MultiSelectList(item.TipProdus, "Id", "Denumire"), new {Multiple="multiple"})
         </td>
-        <td>
-           
-         @*   @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
-        </td>
+    
     </tr>
 }
 

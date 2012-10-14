@@ -5,10 +5,11 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ShopHelper;
 using ShoppingHelper;
+using ShoppingHelper;
+using System.Data.Entity.Infrastructure;
 
-namespace ShopHelper.Controllers
+namespace ShoppingHelper.Controllers
 { 
     public class ShoppingListPerStoreController : Controller
     {
@@ -19,21 +20,31 @@ namespace ShopHelper.Controllers
         private ShoppingListPerStore shop = new ShoppingListPerStore();
         private List<Magazin> magazine;
 
+        public ViewResult NoData()
+        {
+            return View();
+        }
         //
         // GET: /ShoppingListPerStore/
 
         public ViewResult Index()
         {
-            tipProdusList=(List<TipProdus>)Session["ShoppingList"];
+            tipProdusList = Session["ShoppingList"] as List<TipProdus>;
+
+            if (tipProdusList == null)
+            {
+                throw new Exception("Nu este Lista de cumparaturi in Sesiune!");
+            }
           //  tipProdusList = db.TipProduse.ToList();
             produseList = db.Produse.ToList();
            //s tipProdusList = db.TipProduse.Where(p => p.Id == 1).ToList();
             magazine = db.Magazine.ToList();
-            
-            var listeMagazine = tipProdusList.Select(tp => tp.Produs.Select(p => p.Magazin)).ToList();
-            foreach (var listaMagazine in listeMagazine)
+
+            foreach (var tipProdus in tipProdusList)
             {
-                magazine=magazine.Intersect(listaMagazine).ToList();
+                var produse = produseList.Where(p => p.IdTipProdus == tipProdus.Id);
+                var listaMagazinePerProdus = produse.Select(p => p.Magazin).ToList();
+                magazine = magazine.Intersect(listaMagazinePerProdus).ToList();
             }
 
             foreach (Magazin magazin in magazine)
@@ -47,10 +58,14 @@ namespace ShopHelper.Controllers
                 shoppingList.Add(shop);
                 RefreshShoppingList();
             }
-            
 
 
-            return View("Index",shoppingList);
+            if (shoppingList.Count() == 0)
+            {
+                return View("NoData");
+            }
+
+            return View("Index", shoppingList);
         }
 
         private void RefreshShoppingList()
