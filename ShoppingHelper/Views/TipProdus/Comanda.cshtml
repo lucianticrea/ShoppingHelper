@@ -52,6 +52,7 @@
     function submitClick() {
         var postData = $.toJSON(ids);
         var url = '@Url.Action("Comanda", "TipProdus")';
+        var newUrl = '@Url.Action("Index", "ShoppingListPerStore")'; ;
         $.post
         $.ajax(
         {
@@ -61,6 +62,7 @@
             dataType: "html",
             data: { orderedIds: postData },
             success: function (result) {
+                window.location.href =  newUrl;
                 if (result.redirect) {
                     window.location.href = result.redirect;
                     return;

@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using ShoppingHelper;
 using ShoppingHelper;
 using System.Data.Entity.Infrastructure;
+using System.Web.Security;
 
 namespace ShoppingHelper.Controllers
 {
@@ -48,11 +49,18 @@ namespace ShoppingHelper.Controllers
                 magazine = magazine.Intersect(listaMagazinePerProdus).ToList();
             }
 
+            var pretMinim = decimal.MaxValue;
+            Magazin magazinCuPretMinim = null;
             foreach (Magazin magazin in magazine)
             {
                 shop.PretTotal = (from x in produseList
                                   where x.IdMagazin == magazin.Id
                                   select x.Pret).Sum();
+                if(pretMinim>shop.PretTotal)
+                {
+                    pretMinim = shop.PretTotal;
+                    magazinCuPretMinim  = magazin;
+                }
                 shop.MagazinId = magazin.Id;
                 shop.Produse = produseList;
                 shop.TipProdus = tipProdusList;
@@ -65,6 +73,18 @@ namespace ShoppingHelper.Controllers
             {
                 return View("NoData");
             }
+
+            string email = Membership.GetUser().Email;
+            string subject= "Comanda realizata la magazinul ales";
+            string content = string.Format("Buna ziua! \r\n Ne bucuram ca puteti face o alegere cu ajutorul aplicatiei noastre de usurat viata! \r\n Ati ales produsele: \r\n");
+
+            foreach (var product in produseList)
+            {
+                content += string.Format("{0} {1} {2} \r\n",product.TipProdus.Denumire , product.TipProdus.UnitateMasura, product.Pret);
+            }
+
+            content += string.Format(" de la magazinul {0}", magazinCuPretMinim.Nume);
+            HomeController.GmailTeste(email, subject, content);
 
             return View("Index", shoppingList);
         }

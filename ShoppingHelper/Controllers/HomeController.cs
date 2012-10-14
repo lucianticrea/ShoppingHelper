@@ -21,7 +21,7 @@ namespace ShoppingHelper.Controllers
             return View();
         }
 
-        public void GmailTeste(string To, string Subject, string Body)
+        public static void GmailTeste(string To, string Subject, string Body)
         {
             var message = new System.Net.Mail.MailMessage();
             message.To.Add(To);
