@@ -32,7 +32,8 @@
                     }
 
                 }
-
+            </td>
+            <td>
                 @Html.ListBoxFor(modelitem => item.TipProdus, new MultiSelectList(item.TipProdus, "Id", "Denumire"), new { Multiple = "multiple" })
             </td>
         </tr>

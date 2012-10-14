@@ -20,6 +20,10 @@ namespace ShoppingHelper.Controllers
         {
             return View();
         }
+        public ActionResult Localizare()
+        {
+            return View();
+        }
 
         public void GmailTeste(string To, string Subject, string Body)
         {

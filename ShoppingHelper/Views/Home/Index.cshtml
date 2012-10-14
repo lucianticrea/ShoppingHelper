@@ -21,31 +21,32 @@
             <div class="item home">
                 <img src="../../Content/themes/base/images/bg_home.png" alt="" width="199" height="199" class="circle" />
                 <a href="#" class="icon"></a>
-                <h2>Home</h2>
+
                 <ul>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li>@Html.ActionLink("Home", "About", "Home")</li>
                 </ul>
+
+                <h2>Home</h2>
             </div>
             <div class="item shop">
                 <img src="../../Content/themes/base/images/bg_shop.png" alt="" width="199" height="199" class="circle" />
                 <a href="#" class="icon"></a>
                 <h2>Shop</h2>
                 <ul>
-                    <li>@Html.ActionLink("Produs","Index","Produs")</li>
-                    <li>@Html.ActionLink("TipProdus", "Index", "TipProdus")</li>
+                    <li>@Html.ActionLink("Produs", "Index", "Produs")</li>
+                    <li>@Html.ActionLink("Tip Produs", "Index", "TipProdus")</li>
                     <li>@Html.ActionLink("Comanda", "Comanda", "TipProdus")</li>
                 </ul>
             </div>
             <div class="item camera">
                 <img src="../../Content/themes/base/images/bg_camera.png" alt="" width="199" height="199" class="circle" />
                 <a href="#" class="icon"></a>
-                <h2>Photos</h2>
+                <h2>Localizare</h2>
                 <ul>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Prints</a></li>
-                    <li><a href="#">Submit</a></li>
+                    <li>
+                        @Html.ActionLink("Harta", "Localizare", "Home")
+                    </li>
+
                 </ul>
             </div>
             <div class="item fav">
@@ -53,9 +54,8 @@
                 <a href="#" class="icon"></a>
                 <h2>Love</h2>
                 <ul>
-                    <li><a href="#">Social</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">Comments</a></li>
+                    <li><a href="http://www.cora.ro">Cora</a></li>
+                    <li><a href="http://www.carrefour.ro/">Carrefour</a></li>
                 </ul>
             </div>
         </div>
@@ -95,5 +95,4 @@
         );
         });
     </script>
-
 </div>
